@@ -22,10 +22,13 @@ public class DropdownTest {
         softAssert.assertEquals(option1.getText(), "Option 1");
         softAssert.assertEquals(option2.getText(), "Option 2");
         option1.click();
-        softAssert.assertEquals(option1.getDomProperty("selected"), "selected");
+        softAssert.assertEquals(option1.getAttribute("selected"), "true");
+        softAssert.assertEquals(option2.getAttribute("selected"), null);
         dropdown.click();
         option2.click();
-        softAssert.assertEquals(option2.getDomProperty("selected"), "selected");
+        softAssert.assertEquals(option2.getDomProperty("selected"), "true");
+        softAssert.assertEquals(option1.getDomProperty("selected"), "false");
         driver.quit();
+        softAssert.assertAll();
     }
 }

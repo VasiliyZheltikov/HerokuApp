@@ -24,5 +24,6 @@ public class CheckboxesTest {
         checkbox2.click();
         softAssert.assertFalse(Boolean.parseBoolean(checkbox2.getDomProperty("checked")));
         driver.quit();
+        softAssert.assertAll();
     }
 }

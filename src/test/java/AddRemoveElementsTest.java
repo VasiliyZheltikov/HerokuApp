@@ -20,9 +20,10 @@ public class AddRemoveElementsTest {
         for (int i = 0; i < 2; i++) {
             addButton.click();
         }
+        driver.findElement(By.cssSelector("#elements > button")).click();
         List<WebElement> deleteButtons = driver.findElements(By.xpath("//button[text()='Delete']"));
-        deleteButtons.getLast().click();
         softAssert.assertEquals(deleteButtons.size(), 1);
         driver.quit();
+        softAssert.assertAll();
     }
 }

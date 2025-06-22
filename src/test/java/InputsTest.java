@@ -24,11 +24,14 @@ public class InputsTest {
         softAssert.assertTrue(Objects.requireNonNull(inputWindow.getDomProperty("value")).isEmpty());
         int numberSend = 12345;
         inputWindow.sendKeys(Integer.toString(numberSend));
-        softAssert.assertEquals(inputWindow.getDomProperty("value"), numberSend);
+        softAssert.assertEquals(inputWindow.getDomProperty("value"), Integer.toString(numberSend));
         inputWindow.sendKeys(Keys.ARROW_UP);
-        softAssert.assertEquals(inputWindow.getDomProperty("value"), numberSend++);
+        numberSend++;
+        softAssert.assertEquals(inputWindow.getDomProperty("value"), Integer.toString(numberSend));
         inputWindow.sendKeys(Keys.ARROW_DOWN);
-        softAssert.assertEquals(inputWindow.getDomProperty("value"), numberSend);
+        numberSend--;
+        softAssert.assertEquals(inputWindow.getDomProperty("value"), Integer.toString(numberSend));
         driver.quit();
+        softAssert.assertAll();
     }
 }
