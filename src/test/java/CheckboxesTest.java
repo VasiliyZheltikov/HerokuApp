@@ -1,7 +1,6 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
@@ -15,7 +14,7 @@ public class CheckboxesTest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         SoftAssert softAssert = new SoftAssert();
         driver.get("https://the-internet.herokuapp.com/checkboxes");
-        Assert.assertEquals(driver.findElement(By.cssSelector("#content > div > h3")).getText(), "Checkboxes");
+        softAssert.assertEquals(driver.findElement(By.cssSelector("#content > div > h3")).getText(), "Checkboxes");
         WebElement checkbox1 = driver.findElement(By.cssSelector("#checkboxes > input[type=checkbox]:nth-child(1)"));
         WebElement checkbox2 = driver.findElement(By.cssSelector("#checkboxes > input[type=checkbox]:nth-child(3)"));
         softAssert.assertFalse(Boolean.parseBoolean(checkbox1.getDomProperty("checked")));

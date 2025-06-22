@@ -15,8 +15,8 @@ public class AddRemoveElementsTest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         SoftAssert softAssert = new SoftAssert();
         driver.get("https://the-internet.herokuapp.com/add_remove_elements/");
-        WebElement addButton = driver.findElement(By.cssSelector("#content > div > button"));
         softAssert.assertEquals(driver.findElement(By.cssSelector("#content > h3")).getText(), "Add/Remove Elements");
+        WebElement addButton = driver.findElement(By.cssSelector("#content > div > button"));
         for (int i = 0; i < 2; i++) {
             addButton.click();
         }

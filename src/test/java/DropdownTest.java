@@ -1,7 +1,6 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
@@ -15,7 +14,7 @@ public class DropdownTest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         SoftAssert softAssert = new SoftAssert();
         driver.get("https://the-internet.herokuapp.com/dropdown");
-        Assert.assertEquals(driver.findElement(By.cssSelector("#content > div > h3")).getText(), "Dropdown List");
+        softAssert.assertEquals(driver.findElement(By.cssSelector("#content > div > h3")).getText(), "Dropdown List");
         WebElement dropdown = driver.findElement(By.cssSelector("#dropdown"));
         dropdown.click();
         WebElement option1 = driver.findElement(By.cssSelector("#dropdown > option:nth-child(2)"));
