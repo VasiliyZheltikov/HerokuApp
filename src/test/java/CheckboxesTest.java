@@ -17,12 +17,12 @@ public class CheckboxesTest {
         softAssert.assertEquals(driver.findElement(By.cssSelector("#content > div > h3")).getText(), "Checkboxes");
         WebElement checkbox1 = driver.findElement(By.cssSelector("#checkboxes > input[type=checkbox]:nth-child(1)"));
         WebElement checkbox2 = driver.findElement(By.cssSelector("#checkboxes > input[type=checkbox]:nth-child(3)"));
-        softAssert.assertFalse(Boolean.parseBoolean(checkbox1.getDomProperty("checked")));
+        softAssert.assertFalse(checkbox1.isSelected());
         checkbox1.click();
-        softAssert.assertTrue(Boolean.parseBoolean(checkbox1.getDomProperty("checked")));
-        softAssert.assertTrue(Boolean.parseBoolean(checkbox2.getDomProperty("checked")));
+        softAssert.assertTrue(checkbox1.isSelected());
+        softAssert.assertTrue(checkbox2.isSelected());
         checkbox2.click();
-        softAssert.assertFalse(Boolean.parseBoolean(checkbox2.getDomProperty("checked")));
+        softAssert.assertFalse(checkbox2.isSelected());
         driver.quit();
         softAssert.assertAll();
     }
