@@ -8,7 +8,7 @@ import java.time.Duration;
 public class TyposTest {
 
     @Test
-    public void Typos() {
+    public void typos() {
         WebDriver driver = WebDriverSetup.getWebDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         SoftAssert softAssert = new SoftAssert();

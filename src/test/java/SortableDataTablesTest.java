@@ -9,7 +9,7 @@ import java.util.TreeMap;
 public class SortableDataTablesTest {
 
     @Test
-    public void SortableDataTables() {
+    public void sortableDataTables() {
         WebDriver driver = WebDriverSetup.getWebDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         SoftAssert softAssert = new SoftAssert();

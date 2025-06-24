@@ -8,7 +8,7 @@ import java.time.Duration;
 public class NotificationMessagesTest {
 
     @Test
-    public void NotificationMessages() {
+    public void notificationMessages() {
         WebDriver driver = WebDriverSetup.getWebDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         SoftAssert softAssert = new SoftAssert();

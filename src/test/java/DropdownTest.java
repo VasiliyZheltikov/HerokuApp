@@ -9,7 +9,7 @@ import java.time.Duration;
 public class DropdownTest {
 
     @Test
-    public void Dropdown() {
+    public void dropdown() {
         WebDriver driver = WebDriverSetup.getWebDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         SoftAssert softAssert = new SoftAssert();

@@ -9,14 +9,14 @@ import java.time.Duration;
 public class CheckboxesTest {
 
     @Test
-    public void Checkboxes() {
+    public void checkboxes() {
         WebDriver driver = WebDriverSetup.getWebDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         SoftAssert softAssert = new SoftAssert();
         driver.get("https://the-internet.herokuapp.com/checkboxes");
         softAssert.assertEquals(driver.findElement(By.cssSelector("#content > div > h3")).getText(), "Checkboxes");
-        WebElement checkbox1 = driver.findElement(By.cssSelector("#checkboxes > input[type=checkbox]:nth-child(1)"));
-        WebElement checkbox2 = driver.findElement(By.cssSelector("#checkboxes > input[type=checkbox]:nth-child(3)"));
+        WebElement checkbox1 = driver.findElement(By.cssSelector("[type=checkbox]:nth-child(1)"));
+        WebElement checkbox2 = driver.findElement(By.cssSelector("[type=checkbox]:nth-child(3)"));
         softAssert.assertFalse(checkbox1.isSelected());
         checkbox1.click();
         softAssert.assertTrue(checkbox1.isSelected());

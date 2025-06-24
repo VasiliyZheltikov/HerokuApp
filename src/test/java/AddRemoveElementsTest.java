@@ -10,7 +10,7 @@ import java.util.List;
 public class AddRemoveElementsTest {
 
     @Test
-    public void AddRemoveElements() {
+    public void addRemoveElements() {
         WebDriver driver = WebDriverSetup.getWebDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         SoftAssert softAssert = new SoftAssert();

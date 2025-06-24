@@ -10,7 +10,7 @@ import java.time.Duration;
 public class HoversTest {
 
     @Test
-    public void Hovers() {
+    public void hovers() {
         WebDriver driver = WebDriverSetup.getWebDriver();
         Actions action = new Actions(driver);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));

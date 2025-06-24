@@ -11,7 +11,7 @@ import java.util.Objects;
 public class InputsTest {
 
     @Test
-    public void Inputs() {
+    public void inputs() {
         WebDriver driver = WebDriverSetup.getWebDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         SoftAssert softAssert = new SoftAssert();
