@@ -7,7 +7,7 @@ public class FramesTest extends BaseTest {
 
     private String url = "https://the-internet.herokuapp.com/frames";
     private By title = By.tagName("h3");
-    private By iFrameLink = By.cssSelector("[href$=\"iframe\"]");
+    private By iFrameLink = By.cssSelector("[href$='iframe']");
     private By closeNotification = By.cssSelector(".tox-notification__dismiss." +
             "tox-button.tox-button--naked.tox-button--icon");
 
