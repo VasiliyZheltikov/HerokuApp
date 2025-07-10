@@ -1,16 +1,14 @@
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import java.time.Duration;
 
-public class CheckboxesTest {
+public class CheckboxesTest extends BaseTest {
 
     @Test
     public void checkboxes() {
-        WebDriver driver = WebDriverSetup.getWebDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         SoftAssert softAssert = new SoftAssert();
         driver.get("https://the-internet.herokuapp.com/checkboxes");

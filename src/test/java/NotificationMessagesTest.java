@@ -1,15 +1,13 @@
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import java.time.Duration;
 
-public class NotificationMessagesTest {
+public class NotificationMessagesTest extends BaseTest {
 
     @Test
     public void notificationMessages() {
-        WebDriver driver = WebDriverSetup.getWebDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         SoftAssert softAssert = new SoftAssert();
         driver.get("https://the-internet.herokuapp.com/notification_message_rendered");

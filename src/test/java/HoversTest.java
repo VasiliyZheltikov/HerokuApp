@@ -1,5 +1,4 @@
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
@@ -7,11 +6,10 @@ import org.testng.asserts.SoftAssert;
 
 import java.time.Duration;
 
-public class HoversTest {
+public class HoversTest extends BaseTest {
 
     @Test
     public void hovers() {
-        WebDriver driver = WebDriverSetup.getWebDriver();
         Actions action = new Actions(driver);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
         SoftAssert softAssert = new SoftAssert();
